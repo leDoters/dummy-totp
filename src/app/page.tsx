@@ -17,7 +17,7 @@ export default function Home() {
         period: 30
       });
       const newToken = totp.generate();
-      setToken(newToken);
+      setToken(`${newToken}`);
       setCreatedToken(true);
       setTimeout(() => {
         setCreatedToken(false);
