@@ -21,7 +21,7 @@ export default function Home() {
       setCreatedToken(true);
       setTimeout(() => {
         setCreatedToken(false);
-        setToken(null);
+        setToken("");
       }, 30 * 1000);
     };
   }
