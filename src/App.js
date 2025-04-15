@@ -13,7 +13,7 @@ export default function App() {
   const getToken = () => {
     if((!createdToken || !token) && secret !== "" && ( step !== 0 && step !== "" && step !== null && step !== undefined
     && step > 0)){ 
-      totp.options = { digits: 6, step: step, algorithm: 'sha256' };
+      totp.options = { digits: 6, step: step, algorithm: 'sha256'  };
         const newToken = totp.generate(secret);
         setToken(newToken);
         setCreatedToken(true);
