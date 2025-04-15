@@ -47,9 +47,9 @@ export default function Home() {
       </button>
       {
         token && (
-          <div className="flex flex-col items-center mt-4">
-            <h2 className="my-4 text-2xl font-bold">OTP: {token}</h2>
-            <h3 className="my-4 text-xl font-bold">Puedes crear un token despues de 30 segundos "Cuando se cumpla el tiempo el token y el mensaje desapareceran"</h3>
+          <div className='flex flex-col items-center mt-4'>
+            <h2 className='my-4 text-2xl font-bold'>OTP: {token}</h2>
+            <h3 className='my-4 text-xl font-bold'>Puedes crear un token despues de 30 segundos "Cuando se cumpla el tiempo el token y el mensaje desapareceran"</h3>
           </div>
         )
       }
