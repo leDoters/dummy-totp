@@ -4,12 +4,12 @@ import { TOTP, Secret } from 'otpauth';
 import { useState } from 'react';
 
 export default function Home() {
-  const [token, setToken] = useState<any>(null);
-  const [createdToken, setCreatedToken] = useState<any>(null);
-  const [secret, setSecret] = useState<any>("");
+  const [token, setToken] = useState("");
+  const [createdToken, setCreatedToken] = useState(false);
+  const [secret, setSecret] = useState("");
 
   const getToken = () => {
-    if ((!createdToken || !token) && secret !== "") {
+    if ((!createdToken || token == "") && secret !== "") {
       const totp = new TOTP({
         secret: Secret.fromUTF8(secret),
         algorithm: 'SHA256',
@@ -17,7 +17,7 @@ export default function Home() {
         period: 30
       });
       const newToken = totp.generate(secret);
-      setToken(newToken);
+      setToken(`${newToken}`);
       setCreatedToken(true);
       setTimeout(() => {
         setCreatedToken(false);
