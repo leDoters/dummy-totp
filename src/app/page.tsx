@@ -4,9 +4,9 @@ import { TOTP, Secret } from 'otpauth';
 import { useState } from 'react';
 
 export default function Home() {
-  const [token, setToken] = useState(null);
-  const [createdToken, setCreatedToken] = useState(null);
-  const [secret, setSecret] = useState("");
+  const [token, setToken] = useState<any>(null);
+  const [createdToken, setCreatedToken] = useState<any>(null);
+  const [secret, setSecret] = useState<any>("");
 
   const getToken = () => {
     if ((!createdToken || !token) && secret !== "") {
@@ -16,8 +16,8 @@ export default function Home() {
         digits: 6,
         period: 30
       });
-      const newToken = totp.generate();
-      setToken(`${newToken}`);
+      const newToken = totp.generate(secret);
+      setToken(newToken);
       setCreatedToken(true);
       setTimeout(() => {
         setCreatedToken(false);
