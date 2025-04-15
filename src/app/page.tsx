@@ -16,7 +16,7 @@ export default function Home() {
         digits: 6,
         period: 30
       });
-      const newToken = totp.generate(secret);
+      const newToken = totp.generate();
       setToken(newToken);
       setCreatedToken(true);
       setTimeout(() => {
